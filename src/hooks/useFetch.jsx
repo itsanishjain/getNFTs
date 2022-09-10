@@ -7,12 +7,6 @@ const useFetch = (url) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // (async () => {
-    //   // const a = await axios.get(url);
-    //   // console.log({ a });
-    //   // console.log({ data });
-    // })();
-
     axios
       .get(url)
       .then((res) => {
@@ -23,7 +17,6 @@ const useFetch = (url) => {
         setError(null);
       })
       .catch((err) => {
-        console.log(err);
         setIsPending(false);
         setError(err.response.data);
       });
