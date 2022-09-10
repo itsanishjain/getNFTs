@@ -16,7 +16,9 @@ import Modal from "./Modal";
 
 const Main = () => {
   const { address } = useAccount();
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentItem, setCurrentItem] = useState({});
+
   const a = "0xfd091aF831b3511EDF4A5AE525C4fc05012864F9";
   var b = "0x197be7B9D4Ab5bcDd3284cc42641Ea6bA961792f";
   const s = "0xdb6EAFFa95899B53b27086Bd784F3BBFd58Ff843";
@@ -37,7 +39,9 @@ const Main = () => {
 
   return (
     <div>
-      {isModalOpen && <Modal setIsModalOpen={setIsModalOpen} />}
+      {isModalOpen && (
+        <Modal setIsModalOpen={setIsModalOpen} currentItem={currentItem} />
+      )}
       <div
         className="text-white max-w-3xl mx-auto grid 
     grid-row-1 gap-8 p-2 md:grid-cols-2 md:gap-4"
@@ -51,6 +55,10 @@ const Main = () => {
             .concat(data)
             .map((item, index) => (
               <div
+                onClick={() => {
+                  setCurrentItem(item);
+                  setIsModalOpen(true);
+                }}
                 key={index}
                 className="cursor-pointer"
                 data-aos="fade-up-right"
