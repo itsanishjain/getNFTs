@@ -19,7 +19,7 @@ const Main = () => {
   var b = "0x197be7B9D4Ab5bcDd3284cc42641Ea6bA961792f";
   const s = "0xdb6EAFFa95899B53b27086Bd784F3BBFd58Ff843";
 
-  const url = `https://polygon-mainnet.g.alchemy.com/nft/v2/${process.env.NEXT_PUBLIC_ALCHEMY_ID}/getNFTs?owner=${s}&contractAddresses%5B%5D=${lw3ContractAddress}&contractAddresses%5B%5D=${buildspaceContractAddress}&withMetadata=true`;
+  const url = `https://polygon-mainnet.g.alchemy.com/nft/v2/${process.env.NEXT_PUBLIC_ALCHEMY_ID}/getNFTs?owner=${address}&contractAddresses%5B%5D=${lw3ContractAddress}&contractAddresses%5B%5D=${buildspaceContractAddress}&withMetadata=true`;
 
   const { data, isPending, error } = useFetch(url);
   useEffect(() => {
@@ -28,7 +28,9 @@ const Main = () => {
 
   if (error)
     return (
-      <div className="text-white bg-orange-700 p-4 m-4 rounded">{error}</div>
+      <div className="w-64 text-white bg-gradient-to-r from-slate-600 to-slate-800 p-4 m-4 rounded">
+        {error}
+      </div>
     );
 
   if (isPending) return <Loader />;
