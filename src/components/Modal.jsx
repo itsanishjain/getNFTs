@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { lw3ContractAddress, lw3Images } from "../lib/consts";
+import Box from "./Box";
 
 const Modal = ({ setIsModalOpen, currentItem }) => {
   console.log({ currentItem });
@@ -10,7 +12,7 @@ const Modal = ({ setIsModalOpen, currentItem }) => {
       aria-modal="true"
     >
       <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-      <div className="bg-red-500 fixed inset-0 z-10 overflow-y-auto">
+      <div className="fixed inset-0 z-10 overflow-y-auto">
         {/* <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
           <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
             <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
@@ -57,12 +59,7 @@ const Modal = ({ setIsModalOpen, currentItem }) => {
             <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
               <div className="sm:flex sm:items-start">
                 <div className="flex bg-red-100 p-2">
-                  <Image
-                    src={currentItem.media[0].raw}
-                    height={250}
-                    width={400}
-                    alt=""
-                  />
+                  <Box item={currentItem} />
                   <div className="text-black p-2">
                     #{parseInt(currentItem.id.tokenId)}
                   </div>

@@ -12,7 +12,7 @@ const useFetch = (url) => {
       .then((res) => {
         if (res.status != 200)
           throw Error("could not fetch data from resource");
-        setData(res.data.ownedNfts);
+        setData(res.data);
         setIsPending(false);
         setError(null);
       })
