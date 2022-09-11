@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import Box from "./Box";
 import Modal from "./Modal";
 import Loader from "./Loader";
+import MessageBox from "./MessageBox";
 
 import { lw3ContractAddress, buildspaceContractAddress } from "../lib/consts";
 
@@ -26,16 +27,10 @@ const Main = () => {
     AOS.init();
   }, []);
 
-  if (error)
-    return (
-      <div className="w-64 text-white bg-gradient-to-r from-slate-600 to-slate-800 p-4 m-4 rounded">
-        {error}
-      </div>
-    );
-
+  if (error) return <MessageBox message={error} />;
   if (isPending) return <Loader />;
-
-  console.log(data);
+  if (!data || data.ownedNfts.length == 0)
+    return <MessageBox message={"No NFT found, keep learning"} />;
 
   return (
     <div>
@@ -46,23 +41,19 @@ const Main = () => {
         className="text-white max-w-3xl mx-auto grid 
     grid-row-1 gap-8 p-2 md:grid-cols-2 md:gap-4"
       >
-        {data && data.ownedNfts.length == 0 ? (
-          <span>No NFTS</span>
-        ) : (
-          data.ownedNfts.map((item, index) => (
-            <div
-              onClick={() => {
-                setCurrentItem(item);
-                setIsModalOpen(true);
-              }}
-              key={index}
-              className="cursor-pointer"
-              data-aos="fade-up-right"
-            >
-              <Box item={item} />
-            </div>
-          ))
-        )}
+        {data.ownedNfts.map((item, index) => (
+          <div
+            onClick={() => {
+              setCurrentItem(item);
+              setIsModalOpen(true);
+            }}
+            key={index}
+            className="cursor-pointer"
+            data-aos="fade-up-right"
+          >
+            <Box item={item} />
+          </div>
+        ))}
       </div>
     </div>
   );
