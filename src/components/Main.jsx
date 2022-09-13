@@ -20,7 +20,7 @@ const Main = () => {
   var b = "0x197be7B9D4Ab5bcDd3284cc42641Ea6bA961792f";
   const c = "0xdb6EAFFa95899B53b27086Bd784F3BBFd58Ff843";
 
-  const url = `https://polygon-mainnet.g.alchemy.com/nft/v2/${process.env.NEXT_PUBLIC_ALCHEMY_ID}/getNFTs?owner=${b}&contractAddresses%5B%5D=${lw3ContractAddress}&contractAddresses%5B%5D=${buildspaceContractAddress}&withMetadata=true`;
+  const url = `https://polygon-mainnet.g.alchemy.com/nft/v2/${process.env.NEXT_PUBLIC_ALCHEMY_ID}/getNFTs?owner=${address}&contractAddresses%5B%5D=${lw3ContractAddress}&contractAddresses%5B%5D=${buildspaceContractAddress}&withMetadata=true`;
 
   const { data, isPending, error } = useFetch(url);
 
