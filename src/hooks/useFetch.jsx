@@ -21,7 +21,7 @@ const useFetch = (url) => {
         console.error(err);
         setIsPending(false);
         if (INVALID_ADDRESS_TEXT === err.response.data)
-          setError("Please Connect your wallet");
+          setError("Please connect your wallet");
         else setError(err.response.data);
       });
   }, [url]);
