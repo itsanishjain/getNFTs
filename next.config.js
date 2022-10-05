@@ -4,8 +4,9 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: [
-      "tokens.buildspace.so",     
-      "firebasestorage.googleapis.com"
+      "tokens.buildspace.so",
+      "firebasestorage.googleapis.com",
+      "app.glowlabs.xyz",
     ],
   },
 };
