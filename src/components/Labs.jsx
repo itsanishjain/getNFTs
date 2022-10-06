@@ -7,7 +7,7 @@ const Labs = () => {
     <div className="grid grid-cols-12 mt-8 gap-4 sm:p-8">
       {/* LEFT */}
       <div className="flex-col bg-white space-y-2 p-6 rounded-lg h-64 mx-2 mb-4 col-span-12 md:col-span-4 lg:col-span-3">
-        <div className="flex space-x-2 p-2 hover:bg-gray-100 cursor-pointer rounded-md">
+        <div className="flex space-x-2 p-2 hover:bg-gray-100 cursor-pointer rounded-md items-center">
           <div>
             <svg
               width="20"
@@ -22,7 +22,7 @@ const Labs = () => {
           </div>
           <div>Account settings</div>
         </div>
-        <div className="flex space-x-2 p-2 hover:bg-gray-100 cursor-pointer rounded-md  ">
+        <div className="flex space-x-2 p-2 hover:bg-gray-100 cursor-pointer rounded-md items-center  ">
           <div className="">
             <svg
               width="20"
@@ -35,9 +35,9 @@ const Labs = () => {
               <path d="M14.6438 9.63867H13.9802C13.7053 9.63867 13.4824 9.86154 13.4824 10.1364C13.4824 10.4113 13.7053 10.6342 13.9802 10.6342H14.6438C14.9187 10.6342 15.1416 10.4113 15.1416 10.1364C15.1416 9.86151 14.9187 9.63867 14.6438 9.63867Z"></path>
             </svg>
           </div>
-          <div>Billing Plan</div>
+          <div>Billing plan</div>
         </div>
-        <div className="flex space-x-2 p-2 hover:bg-gray-100 cursor-pointer rounded-md">
+        <div className="flex space-x-2 p-2 hover:bg-gray-100 cursor-pointer rounded-md items-center">
           <div>
             <svg
               width="20"
@@ -52,7 +52,7 @@ const Labs = () => {
           <div>Notifications</div>
         </div>
         <div className="p-2">
-          <button className="border-2 p-2 text-center rounded-md w-36">
+          <button className="border-2 p-2 text-center rounded-md w-full">
             Logout
           </button>
         </div>
@@ -128,7 +128,7 @@ const Labs = () => {
             </div>
             <hr />
             <div className="flex justify-between py-4 cursor-pointer">
-              <span>Your Company</span>
+              <span>Your company</span>
               <div className="space-x-2">
                 <span>Pudgy Penguin</span>
                 <span className="">
