@@ -6,7 +6,7 @@ const Labs = () => {
     // <div className="flex flex-col sm:flex-row justify-around mt-8">
     <div className="grid grid-cols-12 mt-8 gap-4 sm:p-8">
       {/* LEFT */}
-      <div className="flex-col bg-white space-y-2 p-6 rounded-lg h-64 mx-2 mb-4 col-span-12 sm:col-span-3">
+      <div className="flex-col bg-white space-y-2 p-6 rounded-lg h-64 mx-2 mb-4 col-span-12 md:col-span-4 lg:col-span-3">
         <div className="flex space-x-2 p-2 hover:bg-gray-100 cursor-pointer rounded-md">
           <div>
             <svg
@@ -58,7 +58,7 @@ const Labs = () => {
         </div>
       </div>
       {/* RIGHT */}
-      <div className="mx-2 col-span-12 sm:col-span-9">
+      <div className="mx-2 col-span-12 md:col-span-8 lg:col-span-9">
         {/* Section */}
         <div>
           <h1 className="text-2xl font-bold">Account settings</h1>
